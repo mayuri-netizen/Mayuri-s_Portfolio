@@ -26,6 +26,13 @@
     margin: 1rem 0 3rem;
 }
 
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
 /* --- Button Styling --- */
 .contact-section .btn {
     display: inline-block;
@@ -41,6 +48,8 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
+    cursor: pointer;
+    /* Ensure button has pointer cursor */
 }
 
 .contact-section .btn::before {
@@ -65,4 +74,18 @@ body.light-mode .contact-section .btn:hover {
 
 body.dark-mode .contact-section .btn:hover {
     color: var(--text-bright);
+}
+
+/* Secondary button style for "Copy Email" */
+.contact-section .btn-secondary {
+    color: var(--text-dark);
+    border-color: var(--text-dark);
+}
+
+.contact-section .btn-secondary::before {
+    background-color: var(--text-dark);
+}
+
+.contact-section .btn-secondary:hover {
+    color: var(--bg-color);
 }
