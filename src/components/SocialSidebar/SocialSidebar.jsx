@@ -17,7 +17,7 @@ const SocialSidebar = () => {
                     </a>
                 </li>
                 <li>
-                    <a href="https://drive.google.com/file/d/1DtL6pRAXzisDdsoT1SiKV6o1le82Tk2k/view?usp=drive_link" target="_blank" rel="noopener noreferrer" aria-label="Resume">
+                    <a href="https://drive.google.com/file/d/1nq1E3ivgh4Y-eWJ2oATxyg3vtcf0HZxb/view?usp=drive_link" target="_blank" rel="noopener noreferrer" aria-label="Resume">
                         {icons.resume}
                     </a>
                 </li>
