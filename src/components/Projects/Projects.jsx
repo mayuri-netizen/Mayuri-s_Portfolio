@@ -13,14 +13,16 @@ const projectsData = [
         title: "Portfolio Website",
         description: "This personal portfolio, built from scratch with React and Vite. Features a modern, responsive design with a theme toggle and elegant animations.",
         tags: ["React", "Vite", "CSS", "Responsive Design"],
-        sourceCode: "https://github.com/mayuri-netizen/Mayuri-s_Portfolio"
+        sourceCode: "https://github.com/mayuri-netizen/Mayuri-s_Portfolio",
+        livePreview: "https://mayuri-s-portfolio.vercel.app/"
     },
     {
         type: "Personal",
         title: "Dev-Connect App",
         description: "A social networking platform for developers. Features user profiles, posts, comments, and real-time chat functionality using MERN stack technologies.",
         tags: ["MongoDB", "Express", "React", "Node.js"],
-        sourceCode: "https://dev-connect-self.vercel.app/"
+        sourceCode: "https://github.com/mayuri-netizen/DevConnect",
+        livePreview: "https://dev-connect-self.vercel.app/"
     },
     {
         type: "Company",
@@ -74,8 +76,8 @@ const Projects = () => {
                             <div className="project-tags">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
                         </div>
                         <div className="project-links">
-                            {project.sourceCode && <a href={project.sourceCode} target="_blank" rel="noopener noreferrer">{icons.github}</a>}
-                            {project.livePreview && <a href={project.livePreview} target="_blank" rel="noopener noreferrer">{icons.external}</a>}
+                            {project.sourceCode && <a href={project.sourceCode} target="_blank" rel="noopener noreferrer" aria-label="GitHub Link">{icons.github}</a>}
+                            {project.livePreview && <a href={project.livePreview} target="_blank" rel="noopener noreferrer" aria-label="Live Preview Link">{icons.external}</a>}
                         </div>
                     </div>
                 ))}
