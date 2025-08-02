@@ -1,0 +1,226 @@
+.header {
+    background-color: color-mix(in srgb, var(--bg-color) 85%, transparent);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 30px -10px var(--nav-shadow);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.nav-logo .logo-image {
+    height: 45px;
+    width: auto;
+    border-radius: 50%;
+    border: 2px solid var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+.nav-logo a:hover .logo-image {
+    transform: scale(1.1);
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 2.5rem;
+}
+
+.nav-link {
+    color: var(--text-light);
+    transition: color 0.3s ease;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.nav-toggle {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Hamburger Menu Icon */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger span {
+    width: 2rem;
+    height: 0.25rem;
+    background: var(--accent-color);
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+
+/* Creative Theme Toggle Styles */
+.theme-toggle {
+    background: var(--secondary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    height: 30px;
+    width: 60px;
+    padding: 3px;
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-toggle .icon-container {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    position: absolute;
+}
+
+.theme-toggle svg {
+    width: 16px;
+    height: 16px;
+    color: var(--accent-color);
+}
+
+.theme-toggle .icon-container.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.theme-toggle .icon-container:not(.active) {
+    transform: translateX(30px);
+    opacity: 0;
+}
+
+body.light-mode .theme-toggle .icon-container.active {
+    transform: translateX(30px);
+}
+
+body.light-mode .theme-toggle .icon-container:not(.active) {
+    transform: translateX(0);
+}
+
+/* Mobile Social Links (Hidden by default) */
+.mobile-social-links {
+    display: none;
+}
+
+
+/* --- Responsive Styles for Mobile --- */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        /* Start off-screen */
+        width: 75%;
+        height: 100vh;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease-in-out;
+        box-shadow: -10px 0px 30px -15px var(--nav-shadow);
+    }
+
+    .nav-menu.active {
+        right: 0;
+        /* Slide in */
+    }
+
+    .nav-item {
+        margin: 1.5rem 0;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+    }
+
+    /* Show mobile social links */
+    .mobile-social-links {
+        display: flex;
+        margin-top: 2rem;
+    }
+
+    .mobile-social-links a {
+        color: var(--text-light);
+        margin: 0 1.5rem;
+    }
+
+    .mobile-social-links svg {
+        width: 24px;
+        height: 24px;
+    }
+}

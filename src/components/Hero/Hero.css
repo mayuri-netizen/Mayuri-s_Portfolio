@@ -1,0 +1,145 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 80px;
+}
+
+.hero-content>* {
+    opacity: 0;
+    animation: fadeUp 0.6s ease-out forwards;
+}
+
+/* --- Adjusted Animation Delays --- */
+.hero-content .intro {
+    animation-delay: 0.2s;
+}
+
+.hero-content .name {
+    animation-delay: 0.4s;
+}
+
+.hero-content .role {
+    animation-delay: 1.2s;
+}
+
+/* Was 2.4s */
+.hero-content .summary {
+    animation-delay: 1.4s;
+}
+
+/* Was 2.6s */
+.hero-content .btn {
+    animation-delay: 1.6s;
+}
+
+/* Was 2.8s */
+
+.hero-content h1 {
+    font-size: clamp(40px, 8vw, 80px);
+    color: var(--text-bright);
+    margin: 0;
+}
+
+.hero-content .name {
+    color: var(--text-bright);
+    font-size: clamp(35px, 7vw, 70px);
+    margin-bottom: 1rem;
+    min-height: clamp(35px, 7vw, 70px);
+}
+
+.hero-content .name span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    animation: letter-reveal 0.5s forwards;
+    text-shadow: 0 0 5px var(--accent-color);
+}
+
+@keyframes letter-reveal {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hero-content .intro {
+    color: var(--accent-color);
+    font-family: 'Fira Code', monospace;
+    margin-bottom: 1rem;
+}
+
+.hero-content .role {
+    font-family: 'Fira Code', monospace;
+    font-size: clamp(18px, 4vw, 24px);
+    margin-bottom: 1rem;
+    font-weight: 500;
+    position: relative;
+    color: transparent;
+    background-image: linear-gradient(90deg, var(--accent-color), var(--text-light));
+    background-size: 200% 100%;
+    background-position: 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: gradient-reveal 2s forwards, fadeUp 0.6s ease-out forwards;
+    animation-delay: 1.2s, 1.2s;
+    /* Adjusted to match */
+}
+
+@keyframes gradient-reveal {
+    from {
+        background-position: 200%;
+    }
+
+    to {
+        background-position: 0%;
+    }
+}
+
+.hero-content .summary {
+    max-width: 540px;
+    color: var(--text-dark);
+    margin-bottom: 3rem;
+}
+
+/* --- Button Styling Fix --- */
+.hero-content .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: 'Fira Code', monospace;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero-content .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.hero-content .btn:hover::before {
+    width: 100%;
+}
+
+body.light-mode .hero-content .btn:hover {
+    color: #fff;
+}
+
+body.dark-mode .hero-content .btn:hover {
+    color: var(--text-bright);
+}

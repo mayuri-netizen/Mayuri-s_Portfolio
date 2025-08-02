@@ -1,0 +1,74 @@
+.certifications {
+    padding: 100px 0;
+}
+
+.certifications h2 {
+    font-size: clamp(26px, 5vw, 32px);
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    color: var(--text-bright);
+}
+
+.certifications h2::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: 0px;
+    width: 300px;
+    height: 1px;
+    margin-left: 20px;
+    background-color: var(--secondary-color);
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.cert-card {
+    background-color: var(--primary-color);
+    padding: 2rem;
+    border-radius: 4px;
+    text-align: center;
+    box-shadow: 0 10px 30px -15px var(--nav-shadow);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+}
+
+.cert-badge {
+    width: 120px;
+    /* Set a container size */
+    height: 120px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cert-badge img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    /* Keep the circular shape */
+}
+
+.cert-card h4 {
+    font-size: 1.1rem;
+    color: var(--text-bright);
+}
+
+.cert-card p {
+    color: var(--text-dark);
+    font-size: 0.9rem;
+}

@@ -1,0 +1,95 @@
+.projects {
+    padding: 100px 0;
+}
+
+.projects h2 {
+    font-size: clamp(26px, 5vw, 32px);
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    color: var(--text-bright);
+}
+
+.projects h2::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: 0px;
+    width: 300px;
+    height: 1px;
+    margin-left: 20px;
+    background-color: var(--secondary-color);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px -15px var(--nav-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+}
+
+.project-content {
+    padding: 2rem;
+}
+
+.project-card .project-type {
+    color: var(--accent-color);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+}
+
+.project-card h3 {
+    color: var(--text-bright);
+    margin-top: 0.5rem;
+}
+
+.project-card .description {
+    color: var(--text-dark);
+    margin: 1.5rem 0;
+}
+
+.project-tags {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8rem;
+    color: var(--text-dark);
+}
+
+.project-tags span {
+    margin-right: 1rem;
+}
+
+.project-links {
+    padding: 0 2rem 1.5rem;
+}
+
+.project-links a {
+    color: var(--text-light);
+    margin-right: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.project-links a:hover {
+    color: var(--accent-color);
+}
+
+.project-links svg {
+    width: 22px;
+    height: 22px;
+}

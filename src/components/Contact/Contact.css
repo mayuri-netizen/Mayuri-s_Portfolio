@@ -1,0 +1,68 @@
+.contact-section {
+    padding: 100px 0;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-section h2 {
+    justify-content: center;
+    font-size: clamp(40px, 5vw, 60px);
+    color: var(--text-bright);
+}
+
+.contact-section h2::after {
+    display: none;
+}
+
+.contact-section .subtitle {
+    font-family: 'Fira Code', monospace;
+    color: var(--accent-color);
+    font-size: 1rem;
+}
+
+.contact-section .contact-text {
+    color: var(--text-dark);
+    margin: 1rem 0 3rem;
+}
+
+/* --- Button Styling --- */
+.contact-section .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: 'Fira Code', monospace;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.contact-section .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.contact-section .btn:hover::before {
+    width: 100%;
+}
+
+body.light-mode .contact-section .btn:hover {
+    color: #fff;
+}
+
+body.dark-mode .contact-section .btn:hover {
+    color: var(--text-bright);
+}
